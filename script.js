@@ -1,5 +1,5 @@
 let noClicks = 1;
-const maxNoClicks = 4;
+const maxNoClicks = 6;
 const minNoScale = 0.65;
 let noScale = 1;
 let yesScale = 1; // This now tracks the scaling factor directly
@@ -11,9 +11,9 @@ const yesButtonStyle = window.getComputedStyle(yesButton);
 const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
 
 // array of gifs - in order
-const gifs = ["assets/images/love-lilo-and-stitch.gif", "assets/images/sad-stitch.gif", "assets/images/sad-stitch2.gif", "assets/images/ohana.gif"];
+const gifs = ["assets/images/love-lilo-and-stitch.gif", "assets/images/sad-stitch.gif", "assets/images/sad-stitch2.gif", "assets/images/sad-stitch3.gif","assets/images/sad-stitch5.gif","assets/images/ohana.gif"];
 // array of messages
-const buttonMessages = ["Are you sure??", "Pookie please", "Pookie PLEASE", "You can't do this to me!"];
+const buttonMessages = ["Are you sure??", "Pookie please", "Pookie PLEASE", "You can't do this to me!", "Are you sure Pookie Wookie?","PLEASE PLEASE PLEASE!"];
 
 // no button clicked
 noButton.addEventListener("click", () => {
@@ -23,7 +23,7 @@ noButton.addEventListener("click", () => {
     }
 
     // change no button text
-    noButton.textContent = buttonMessages[noClicks % maxNoClicks];
+    noButton.textContent = buttonMessages[noClicks % buttonMessages.length]
 
     // Adjust button width to fit text
     noButton.style.width = 'auto';
